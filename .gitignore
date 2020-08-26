@@ -1,2 +1,5 @@
 .DS_Store
 shell/init.log
+master/data
+slave1/data
+slave2/data
