@@ -1,0 +1,44 @@
+Sending build context to Docker daemon  6.144kB
+Step 1/6 : FROM mysql:5.7.13
+ ---> 1195b21c3a45
+Step 2/6 : ENV MYSQL_ROOT_PASSWORD master
+ ---> Running in 1763ede24bcd
+Removing intermediate container 1763ede24bcd
+ ---> a4179e77d649
+Step 3/6 : COPY master.sh /mysql/master.sh
+ ---> eca46322607e
+Step 4/6 : COPY master.sql /mysql/master.sql
+ ---> 39daedfe6238
+Step 5/6 : EXPOSE 3306
+ ---> Running in ae32225cef96
+Removing intermediate container ae32225cef96
+ ---> ab905d0824f5
+Step 6/6 : CMD ["sh", "/mysql/master.sh"]
+ ---> Running in e2fabd5c9406
+Removing intermediate container e2fabd5c9406
+ ---> 987958d75c4f
+Successfully built 987958d75c4f
+Successfully tagged mysql:master
+Sending build context to Docker daemon  6.144kB
+Step 1/5 : FROM mysql:5.7.13
+ ---> 1195b21c3a45
+Step 2/5 : ENV MYSQL_ROOT_PASSWORD slave
+ ---> Running in f9b8a4ef4c39
+Removing intermediate container f9b8a4ef4c39
+ ---> 18d0737ebd65
+Step 3/5 : COPY slave.sh /mysql/slave.sh
+ ---> 795ba99f906e
+Step 4/5 : EXPOSE 3306
+ ---> Running in c7b07315882f
+Removing intermediate container c7b07315882f
+ ---> b5c3a8fc8558
+Step 5/5 : CMD ["sh", "/mysql/slave.sh"]
+ ---> Running in 4aeb21c22e32
+Removing intermediate container 4aeb21c22e32
+ ---> c5121b63187a
+Successfully built c5121b63187a
+Successfully tagged mysql:slave
+d571dd28f7ecf9e8ce7da8aa4436853207b026d9414d17a15e3698b28821e277
+afb3514d392b0606bfc690969b446341b8895c2af7e9bad0fb50bbd460521358
+157ac1ef7913d1e47d315affd6c222c9bc557cc3883b8ae8f1af0a5e3f31a645
+59b1bc9a7a9152476a91c6057bb2d114ed2290bac75077aa8db2517a5b5b7b31
